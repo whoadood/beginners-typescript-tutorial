@@ -10,7 +10,7 @@ const createThenGetUser = async (
   createUser: () => Promise<User['id']>,
   getUser: (id: User['id']) => Promise<User>,
 ): Promise<User> => {
-  const userId: string = await createUser();
+  const userId: User['id'] = await createUser();
 
   const user = await getUser(userId);
 
